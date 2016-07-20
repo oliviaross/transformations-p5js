@@ -10,7 +10,7 @@ As you probably know, p5.js sketches work like sketching on graph paper. When yo
 rect(20, 20, 40, 40);
 
 ```
-![Screen Shot 2016-07-20 at 11.44.08 AM.png]()
+![alt](Screen Shot 2016-07-20 at 11.44.08 AM.png)
 
 If you want to move the rectangle 60 units right and 80 units down, you _can_ change the coordinates, by adding to the _x_ and _y_ starting point:
 
@@ -20,7 +20,7 @@ fill(255, 0, 0, 100);
 rect(20 + 60, 20 + 80, 40, 40);
 
 ```
-![Screen Shot 2016-07-20 at 12.01.01 PM.png]()
+![alt](Screen Shot 2016-07-20 at 12.01.01 PM.png)
 
 Here, you can see the original rectangle in gray and it's twin in red.
 
@@ -33,7 +33,7 @@ translate(60, 80);
 rect(20, 20, 40, 40);
 
 ```
-![Screen Shot 2016-07-20 at 12.04.14 PM.png]()
+![alt](Screen Shot 2016-07-20 at 12.04.14 PM.png)
 
 You can tell the two rectangles are in the same spot because of that weird tan color you get by mixing red and green, haha!
 
@@ -213,7 +213,7 @@ function drawSnowman(x, y) {
 
 ```
 
-![Screen Shot 2016-07-20 at 2.36.02 PM.png]()
+![alt](Screen Shot 2016-07-20 at 2.36.02 PM.png)
 
 ##Rotation
 
@@ -246,7 +246,7 @@ function setup(){
 
 ```
 
-![Screen Shot 2016-07-20 at 2.22.21 PM.png]()
+![alt](Screen Shot 2016-07-20 at 2.22.21 PM.png)
 
 Hey, what happened? How come the square got moved and cut off? The answer is: the square did not move. The **grid** was rotated and on the rotated coordinate system, the square still has its upper left corner at (40, 40).
 
@@ -289,7 +289,7 @@ function setup(){
 
 ```
 ￼
-![Screen Shot 2016-07-20 at 2.26.38 PM.png]()
+![alt](Screen Shot 2016-07-20 at 2.26.38 PM.png)
 
 
 Here is a program that generates a wheel of colors by using rotation! <3
@@ -317,13 +317,14 @@ function draw(){
 
 ```
 
-![Screen Shot 2016-07-20 at 2.31.44 PM.png]()
+![alt](Screen Shot 2016-07-20 at 2.26.38 PM.png)
 
 
 ## Scaling
 
 The final coordinate system transformation is scaling, which changes the size of the grid. Take a look at this example, which draws a square, then scales the grid to twice its normal size, and draws it again.
 
+``` javascript
 function setup() {
   createCanvas(200,200);
   background(255);
@@ -348,11 +349,15 @@ function setup() {
   pop();
 }
 
+```
+
 First, you can see that the square appears to have moved. It hasn’t, of course. Its upper left corner is still at (20, 20) on the scaled-up grid, but that point is now twice as far away from the origin as it was in the original coordinate system. You can also see that the lines are thicker. That’s no optical illusion—the lines really are twice as thick, because the coordinate system has been scaled to double its size.
 
 #Order Matters
 
 When you do multiple transformations, the order makes a difference. A rotation followed by a translate followed by a scale will not give the same results as a translate followed by a rotate by a scale. Here is some sample code and the results.
+
+``` javascript
 
 function setup() {
   createCanvas(200, 200);
@@ -399,7 +404,9 @@ function setup() {
   pop();
 }
 
-![Screen Shot 2016-07-20 at 2.49.54 PM.png]()
+```
+
+![alt](Screen Shot 2016-07-20 at 2.49.54 PM.png)
 
 #Before we go...
 
@@ -414,7 +421,7 @@ If you are working in three dimensions, you can call the translate() function wi
 For rotation, call the rotateX(), rotateY(), or rotateZ() function to rotate around each of the axes. All three of these functions expect one argument: the number of radians to rotate.
 
 
-###Notices
+#####Notices
 
 The original Processing tutorial has some extra parts to pratice these topics, namely two case studies on animating things and making interactive transformations. I encourage you to use them, but please know that in Processing, `push()` and `pop` are referred to as `pushMatrix()` and `popMatrix`.
 
