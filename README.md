@@ -350,6 +350,33 @@ function setup() {
 
 First, you can see that the square appears to have moved. It hasn’t, of course. Its upper left corner is still at (20, 20) on the scaled-up grid, but that point is now twice as far away from the origin as it was in the original coordinate system. You can also see that the lines are thicker. That’s no optical illusion—the lines really are twice as thick, because the coordinate system has been scaled to double its size.
 
+##Images? Images!
+
+``` javascript
+var schnauzer;
+
+function preload() {
+	schnauzer = loadImage("schnauzer.png");
+}
+
+function setup() {
+  createCanvas(600, 600);
+  background(0, 0, 255);
+
+  push();
+
+ 	translate(200, 200);
+ 	rotate(radians(30));
+ 	scale(0.5);
+
+  image(schnauzer, 0, 0);
+
+  pop();
+}
+```
+
+![alt](Screen Shot 2016-07-20 at 3.19.04 PM.png)
+
 #Order Matters
 
 When you do multiple transformations, the order makes a difference. A rotation followed by a translate followed by a scale will not give the same results as a translate followed by a rotate by a scale. Here is some sample code and the results.
