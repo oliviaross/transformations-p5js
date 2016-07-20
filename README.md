@@ -286,16 +286,13 @@ function setup(){
 	//revert to original drawing state
 	pop();
 }
-
 ```
 ￼
-![alt](Screen Shot 2016-07-20 at 2.26.38 PM.png)
+![](Screen Shot 2016-07-20 at 2.26.38 PM.png)
 
-
-Here is a program that generates a wheel of colors by using rotation! <3
+Here's a program that generates a wheel of colors by using rotation! <3
 
 ``` javascript
-
 function setup() {
   createCanvas(200, 200);
   background(255);
@@ -317,7 +314,7 @@ function draw(){
 
 ```
 
-![alt](Screen Shot 2016-07-20 at 2.26.38 PM.png)
+![alt](Screen Shot 2016-07-20 at 2.31.44 PM.png)
 
 
 ## Scaling
