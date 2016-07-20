@@ -189,7 +189,7 @@ function drawSnowman(x, y) {
 }
 ```
 
-Compare that to the version of the function that uses `translate()`. In this case, the code draws each snowman in the same place every time. with it's upper left corner at (0,0), and lets translation do all the work instead.
+Compare that to the version of the function that uses `translate()`. In this case, the code draws each snowman in the same place every time, with it's upper left corner at (0,0), and lets translation do all the work instead.
 
 
 ``` javascript
@@ -217,7 +217,7 @@ function drawSnowman(x, y) {
 
 ##Rotation
 
-Not only can we move the coordinate system with `translate()` in p5, we can also rotate the entire grid, with `rotate()`. This function takes one argument, which is the number of _radians_ you want to rotate. Since most people think in degrees, p5 has a built-in `radians()` function which takes a number of degrees as it's argument and converts it for you. Give that background info, let's try rotating a square clockwise.
+Not only can we move the coordinate system with `translate()` in p5, we can also rotate the entire grid, with `rotate()`. This function takes one argument, which is the number of _radians_ you want to rotate. Since most people think in degrees, p5 has a built-in `radians()` function which takes a number of degrees as it's argument and converts it for you. Given that background info, let's try rotating a square clockwise.
 
 ``` javascript
 
