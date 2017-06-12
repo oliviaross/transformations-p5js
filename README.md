@@ -1,8 +1,8 @@
-#2D Tranformations in p5.js
+# 2D Tranformations in p5.js
 
 This tutorial is an alternative version of the processing tutorial,  [2D Transformations by J. David Eisenberg] (https://processing.org/tutorials/transform2d/), adapted for p5.js.
 
-##Translation: Moving the Grid
+## Translation: Moving the Grid
 
 As you probably know, p5.js sketches work like sketching on graph paper. When you want to draw something, like an ellipse or rectangle, you specify it's coordinates. Here's a simple rectangle drawn with the following code:
 
@@ -10,7 +10,9 @@ As you probably know, p5.js sketches work like sketching on graph paper. When yo
 rect(20, 20, 40, 40);
 
 ```
+
 ![alt](Screen Shot 2016-07-20 at 11.44.08 AM.png)
+
 
 If you want to move the rectangle 60 units right and 80 units down, you _can_ change the coordinates, by adding to the _x_ and _y_ starting point:
 
@@ -20,6 +22,7 @@ fill(255, 0, 0, 100);
 rect(20 + 60, 20 + 80, 40, 40);
 
 ```
+
 ![alt](Screen Shot 2016-07-20 at 12.01.01 PM.png)
 
 Here, you can see the original rectangle in gray and it's twin in red.
@@ -33,6 +36,7 @@ translate(60, 80);
 rect(20, 20, 40, 40);
 
 ```
+
 ![alt](Screen Shot 2016-07-20 at 12.04.14 PM.png)
 
 You can tell the two rectangles are in the same spot because of that weird tan color you get by mixing red and green, haha!
@@ -88,7 +92,7 @@ function setup(){
 
 ```
 
-##Translation, Properly
+## Translation, Properly
 
 One problem you might run into using `translate()` is that, eventually, you may want to put the coordinate grid back where it was originally. In this case, two lovely functions arrive to save the day. Their names are `push()` and `pop()` and they'll help us save and restore our _drawing states_.
 
@@ -151,7 +155,7 @@ function setup() {
 
 ```
 
-##Why do all this?
+## Why do all this?
 
 Great, translating works properly! But, why would anyone do it over just adding to the coordinates like this?
 
@@ -215,7 +219,7 @@ function drawSnowman(x, y) {
 
 ![alt](Screen Shot 2016-07-20 at 2.36.02 PM.png)
 
-##Rotation
+## Rotation
 
 Not only can we move the coordinate system with `translate()` in p5, we can also rotate the entire grid, with `rotate()`. This function takes one argument, which is the number of _radians_ you want to rotate. Since most people think in degrees, p5 has a built-in `radians()` function which takes a number of degrees as it's argument and converts it for you. Given that background info, let's try rotating a square clockwise.
 
@@ -250,7 +254,7 @@ function setup(){
 
 Hey, what happened? How come the square got moved and cut off? The answer is: the square did not move. The **grid** was rotated and on the rotated coordinate system, the square still has its upper left corner at (40, 40).
 
-##Rotation, Properly
+## Rotation, Properly
 
 The correct way to rotate the square would be to:
 +	Translate the coordinate system’s origin (0, 0) to where you want the upper left of the square to be.
@@ -350,7 +354,7 @@ function setup() {
 
 First, you can see that the square appears to have moved. It hasn’t, of course. Its upper left corner is still at (20, 20) on the scaled-up grid, but that point is now twice as far away from the origin as it was in the original coordinate system. You can also see that the lines are thicker. That’s no optical illusion—the lines really are twice as thick, because the coordinate system has been scaled to double its size.
 
-##Images? Images!
+## Images? Images!
 
 ``` javascript
 var schnauzer;
@@ -377,7 +381,7 @@ function setup() {
 
 ![alt](Screen Shot 2016-07-20 at 3.19.04 PM.png)
 
-#Order Matters
+# Order Matters
 
 When you do multiple transformations, the order makes a difference. A rotation followed by a translate followed by a scale will not give the same results as a translate followed by a rotate by a scale. Here is some sample code and the results.
 
@@ -432,20 +436,20 @@ function setup() {
 
 ![alt](Screen Shot 2016-07-20 at 2.49.54 PM.png)
 
-#Before we go...
+# Before we go...
 
-##Push and Pop
+## Push and Pop
 
 What exactly are _push_ and _pop_ supposed to mean? These come from a computer concept known as a stack, which works like a spring-loaded tray dispenser in a cafeteria. When someone returns a tray to the stack, its weight pushes the platform down. When someone needs a tray, she takes it from the top of the stack, and the remaining trays pop up a little bit.
 
 In a similar manner, push() puts the current status of the coordinate system at the top of a memory area, and pop() pulls that status back out.
 
-##Three-dimensional Transforms
+## Three-dimensional Transforms
 If you are working in three dimensions, you can call the translate() function with three arguments for the x, y, and z distances. Similarly, you can call scale() with three arguments that tell how much you want the grid scaled in each of those dimensions.
 For rotation, call the rotateX(), rotateY(), or rotateZ() function to rotate around each of the axes. All three of these functions expect one argument: the number of radians to rotate.
 
 
-#####Notices
+##### Notices
 
 The original Processing tutorial has some extra parts to pratice these topics, namely two case studies on animating things and making interactive transformations. I encourage you to use them, but please know that in Processing, `push()` and `pop` are referred to as `pushMatrix()` and `popMatrix`.
 
